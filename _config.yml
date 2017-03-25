@@ -1,28 +1,28 @@
 # main text of home
-name: John Doe
-bio: A Man who travels the world eating noodles
+name: Mohammed Nafees
+bio: UWaterloo Math. Let me make you an app. 
 
 # twitter summary info
-description: A blog about technology and stuff related
+description: A blog about random tech ramblings
 
 # if it's an external image, update below for true
 # better with square images
-external-image: false
-picture: assets/images/profile.jpg
+external-image: true
+picture: https://avatars3.githubusercontent.com/u/1763885
 
 # If you want to include your resume, set to true
 # and specify source (external or local).
 resume: true
 resume-external: true
-resume-url: https://google.com/?q=my+resume
+resume-url: https://drive.google.com/file/d/0Bwf3amvSj1_zRFBlLVhiMHc0eGs/view?usp=sharing
 
-url: https://koppl.in/indigo
+url: https://www.mnafees.me
 # your url: http://USERNAME.github.io
 
 permalink: /:title/
 
 # To enable google analytics, supply your token below
-# analytics-google: 'UA-MYANALYTICS'
+analytics-google: 'UA-89889112-1'
 
 # To enable piwik tracking, supply your url & site ID below
 # analytics-piwik-url: 'piwik.my-host.com'
@@ -30,39 +30,32 @@ permalink: /:title/
 
 # if you don't want comments in your posts, leave categories empty
 disqus:
-  shortname: mydisqus # enter this from your disqus account
+  shortname: mnafees # enter this from your disqus account
   categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
-facebook: myfacebook
-twitter: mytwitter
-# google: mygoogle
-# instagram: myinstagram
+facebook: mnafees.me
+twitter: thebinaryking
+google: MohammedNafees
+instagram: mnafees.me
 # pinterest: mypinterest
-# linkedin: mylinkedin
+linkedin: in/mohammed-nafees-a0686167/
 # youtube: myyoutube
 # spotify: myspotify
-github: mygithub
+github: mnafees
 # stackoverflow: 7044681/mystackoverflow
 # quora: userquora
 # reddit: username
-medium: medium
+# medium: medium
 # vimeo: myvimeo
-email: myemail@gmail.com
+email: hello@mnafees.me
 
 authors:
-    johndoe:
-        name: John Doe
-        bio: A Man who travels the world eating noodles
-        external-image: false
-        picture: assets/images/profile.jpg
-        twitter: johndoe
-    jamesfoster:
-        name: James Foster
-        bio: A Man who develops software with coffee
-        external-image: false
-        picture: assets/images/james.jpg
-        twitter: jamesfoster
+    mnafees:
+        name: Mohammed Nafees
+        bio: UWaterloo Math. Let me make you an app.
+        external-image: true
+        picture: https://avatars3.githubusercontent.com/u/1763885
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
