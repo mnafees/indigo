@@ -24,6 +24,11 @@ layout: compress
     {{ scss_sheet | scssify }}
     </style>
 
+    <script type="text/javascript">
+        var host = "mnafees.me";
+        if ((host == window.location.host) && (window.location.protocol != "https:"))
+            window.location.protocol = "https";
+    </script>
 </head>
 <body>
 
