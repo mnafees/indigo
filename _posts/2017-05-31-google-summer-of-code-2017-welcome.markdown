@@ -29,9 +29,7 @@ The KDE® Community is a free software community dedicated to creating an open a
 
 ## My GSoC 2017 Project
 
-{% highlight raw %}
 ![Marble][1]
-{% endhighlight %}
 
 Marble Maps brings the highly detailed OpenStreetMap to your Android devices. It features a crisp, beautiful map with an intuitive user interface. This project is about extending it to support indoor maps (e.g. selecting and showing different levels of a building). The following are the goals to achieve from this project:
 * Marble extracts [indoor related OSM tags](https://wiki.openstreetmap.org/wiki/Simple_Indoor_Tagging).
