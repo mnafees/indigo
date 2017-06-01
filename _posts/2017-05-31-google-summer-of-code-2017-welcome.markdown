@@ -41,6 +41,8 @@ Marble Maps brings the highly detailed OpenStreetMap to your Android devices. It
 * Extend libmarblewidget with additional classes and objects to be able to support all the above mentioned points.
 * Improve indoor rendering.
 
+##### Want to see my progress throughout the programme timeline? Go to my KDE Phabricator [Workboard](https://phabricator.kde.org/project/view/234/) to check it out!
+
 ### Let the coding begin!
 
 [1]: https://marble.kde.org/img/marble-logo.png
