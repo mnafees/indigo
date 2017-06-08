@@ -10,7 +10,7 @@ tag:
 - kde
 - marble
 star: true
-category: [blog, kde]
+category: kde
 author: mnafees
 description: The welcome post for my Google Summer of Code 2017 journey
 ---
