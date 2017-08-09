@@ -23,7 +23,7 @@ to just enable the user to look through our Vector OSM map theme for buildings/a
 
 # How does it look!!? 😃
 
-![Indoor level debug mode][/assets/images/indoor-level-debug-mode.gif]
+![Indoor level debug mode][1]
 
 # How can I use it?
 
@@ -38,3 +38,6 @@ If you need to exit the indoor level debug mode, just press the "L" key and to r
 ### Feedback?
 
 Please reach out to me in the comments!
+
+[1]: https://www.mnafees.me/assets/images/indoor-level-debug-mode.gif
+
