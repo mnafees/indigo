@@ -2,11 +2,11 @@
 
 var KEYBOARD_FIRST_ROW_TOP = "~!@#$%^&*()_+";
 var KEYBOARD_FIRST_ROW_BOTTOM = "`1234567890-=";
-var KEYBOARD_SECOND_ROW_TOP = "          {}|";
+var KEYBOARD_SECOND_ROW_TOP = "QWERTYUIOP{}|";
 var KEYBOARD_SECOND_ROW_BOTTOM = "qwertyuiop[]\\";
-var KEYBOARD_THIRD_ROW_TOP = "         :\"";
+var KEYBOARD_THIRD_ROW_TOP = "ASDFGHJKL:\"";
 var KEYBOARD_THIRD_ROW_BOTTOM = "asdfghjkl;'";
-var KEYBOARD_FOURTH_ROW_TOP = "       <>?";
+var KEYBOARD_FOURTH_ROW_TOP = "ZXCVBNM<>?";
 var KEYBOARD_FOURTH_ROW_BOTTOM = "zxcvbnm,./";
 var BACK_KEY = "Back";
 var ENTER_KEY = "Enter";
@@ -16,18 +16,18 @@ var SHIFT_KEYS_EL = [];
 var SHIFT_KEY_PRESSED = false;
 
 var onShiftKeyPressed = () => {
-  var alphabetKeys = document.querySelectorAll(".alphabet");
-  for (var i = 0; i < alphabetKeys.length; ++i) {
+  var alphanumsymKeys = document.querySelectorAll(".alphanumsym");
+  for (var i = 0; i < alphanumsymKeys.length; ++i) {
     if (SHIFT_KEY_PRESSED) {
-      alphabetKeys[i].value = alphabetKeys[i].value.toUpperCase();
+      alphanumsymKeys[i].value = alphanumsymKeys[i].getAttribute("data-shift-on");
     } else {
-      alphabetKeys[i].value = alphabetKeys[i].value.toLowerCase();
+      alphanumsymKeys[i].value = alphanumsymKeys[i].getAttribute("data-shift-off");
     }
   }
 };
 
 var onKeyboardButtonClicked = (e) => {
-  var buttonVal = e.originalTarget.value;
+  var buttonVal = e.srcElement.value;
   var textArea = document.querySelector("textarea");
   if (buttonVal === BACK_KEY) {
     if (textArea.value.length > 0) {
@@ -49,16 +49,7 @@ var onKeyboardButtonClicked = (e) => {
   } else if (buttonVal === SPACE_KEY) {
     textArea.value += " ";  
   } else {
-    var keys = buttonVal.split("\n");
-    if (keys[0] === " ") {
-      textArea.value += keys[1];
-    } else {
-      if (SHIFT_KEY_PRESSED) {
-        textArea.value += keys[0];
-      } else {
-        textArea.value += keys[1];
-      }
-    }
+    textArea.value += buttonVal;
   }
   textArea.focus();
 };
@@ -71,7 +62,10 @@ var enableKeyboard = (keyboardElem) => {
   for (var i = 0; i < KEYBOARD_FIRST_ROW_TOP.length; ++i) {
     var input = document.createElement("input");
     input.type = "button";
-    input.value = KEYBOARD_FIRST_ROW_TOP.charAt(i) + "\n" + KEYBOARD_FIRST_ROW_BOTTOM.charAt(i);
+    input.value = KEYBOARD_FIRST_ROW_BOTTOM.charAt(i);
+    input.setAttribute("data-shift-on", KEYBOARD_FIRST_ROW_TOP.charAt(i));
+    input.setAttribute("data-shift-off", KEYBOARD_FIRST_ROW_BOTTOM.charAt(i));
+    input.classList.add("alphanumsym");
     firstRow.appendChild(input);  
   }
   var backButton = document.createElement("input");
@@ -85,10 +79,10 @@ var enableKeyboard = (keyboardElem) => {
   for (var i = 0; i < KEYBOARD_SECOND_ROW_TOP.length; ++i) {
     var input = document.createElement("input");
     input.type = "button";
-    input.value = KEYBOARD_SECOND_ROW_TOP.charAt(i) + "\n" + KEYBOARD_SECOND_ROW_BOTTOM.charAt(i);
-    if (KEYBOARD_SECOND_ROW_BOTTOM.charAt(i).match(/[a-zA-Z]/)) {
-      input.classList.add("alphabet");
-    }
+    input.value = KEYBOARD_SECOND_ROW_BOTTOM.charAt(i);
+    input.setAttribute("data-shift-on", KEYBOARD_SECOND_ROW_TOP.charAt(i));
+    input.setAttribute("data-shift-off", KEYBOARD_SECOND_ROW_BOTTOM.charAt(i));
+    input.classList.add("alphanumsym");
     secondRow.appendChild(input);  
   }
 
@@ -97,10 +91,10 @@ var enableKeyboard = (keyboardElem) => {
   for (var i = 0; i < KEYBOARD_THIRD_ROW_TOP.length; ++i) {
     var input = document.createElement("input");
     input.type = "button";
-    input.value = KEYBOARD_THIRD_ROW_TOP.charAt(i) + "\n" + KEYBOARD_THIRD_ROW_BOTTOM.charAt(i);
-    if (KEYBOARD_THIRD_ROW_BOTTOM.charAt(i).match(/[a-zA-Z]/)) {
-      input.classList.add("alphabet");
-    }
+    input.value = KEYBOARD_THIRD_ROW_BOTTOM.charAt(i);
+    input.setAttribute("data-shift-on", KEYBOARD_THIRD_ROW_TOP.charAt(i));
+    input.setAttribute("data-shift-off", KEYBOARD_THIRD_ROW_BOTTOM.charAt(i));
+    input.classList.add("alphanumsym");
     thirdRow.appendChild(input);  
   }
   var enterButton = document.createElement("input");
@@ -120,10 +114,10 @@ var enableKeyboard = (keyboardElem) => {
   for (var i = 0; i < KEYBOARD_FOURTH_ROW_TOP.length; ++i) {
     var input = document.createElement("input");
     input.type = "button";
-    input.value = KEYBOARD_FOURTH_ROW_TOP.charAt(i) + "\n" + KEYBOARD_FOURTH_ROW_BOTTOM.charAt(i);
-    if (KEYBOARD_FOURTH_ROW_BOTTOM.charAt(i).match(/[a-zA-Z]/)) {
-      input.classList.add("alphabet");
-    }
+    input.value = KEYBOARD_FOURTH_ROW_BOTTOM.charAt(i);
+    input.setAttribute("data-shift-on", KEYBOARD_FOURTH_ROW_TOP.charAt(i));
+    input.setAttribute("data-shift-off", KEYBOARD_FOURTH_ROW_BOTTOM.charAt(i));
+    input.classList.add("alphanumsym");
     fourthRow.appendChild(input);  
   }
   var shiftButtonClone = shiftButton.cloneNode(true);

@@ -112,7 +112,7 @@ input[type=button][pressed=pressed] {
     text-transform: none;
 }
 .mn-keyboard-third-row {
-    margin-left: 35px !important;
+    margin-left: 40px !important;
 }
 .mn-keyboard-third-row input[type=button] {
     min-width: 30px;
@@ -124,7 +124,7 @@ input[type=button][pressed=pressed] {
     text-transform: none;
 }
 .mn-keyboard-fourth-row {
-    margin-left: 28px !important;
+    margin-left: 35px !important;
 }
 .mn-keyboard-fourth-row input[type=button] {
     min-width: 30px;
