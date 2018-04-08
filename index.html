@@ -115,17 +115,21 @@
             height: 100%;
         }
         .right p {
-            margin: 100px;
-            margin-top: -40px;
             font-size: 1.5em;
-            padding: 20px;
         }
         .right p a {
             color: black;
         }
+        .right .content {
+            margin: 50px 100px;
+        }
+        h2 {
+            font-size: 3em;
+            font-family: 'Satisfy', cursive;
+        }
         .menu-container {
             display: flex;
-            position: absolute;
+            position: fixed;
             top: 0;
             width: 70%;
         }
@@ -146,6 +150,19 @@
         .menu-container .row a {
             text-decoration: none;
         }
+        .kittens {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background: #ddd;
+            padding: 10px 30px;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        .kittens:hover {
+            background: black;
+            color: white;
+        }
     </style>
 </head>
 <body> 
@@ -154,29 +171,25 @@
     </div>
     <div class="right">
         <div class="menu-container">
-            <div class="row" data-href="index.html">
-                Home
-            </div>
-            <div class="row" data-href="projects.html">
-                Projects
-            </div>
-            <div class="row data-href="#">
-                Résumé
-            </div>
-            <div class="row" data-href="mailto:hello@mnafees.me">
-                Email
-            </div>
-            <div class="row" data-href="#">
-                Social
-            </div>
+            <div class="row" data-href="#about">About</div>
+            <div class="row" data-href="#hacks">Hacks</div>
+            <div class="row" data-href="#">Résumé</div>
+            <div class="row" data-href="mailto:hello@mnafees.me">Email</div>
+            <div class="row" data-href="#social">Social</div>
         </div>
         <h1 class="title">Mohammed.Nafees();</h1>
-        <p>Hey there human (Robot 🤖? <a href="#">Click here</a>)! I am Mohammed Nafees, an undergrad CS student at the University of
-         Waterloo, Canada. This is my personal website where I will try to impress you by walking you through some of the
-          things that I have worked on.<br><br>I'm an open-source enthusiast. I happen to be a former Google Code-in grand
-           prize winner and an AngelHack Global HACKcelerator finalist.<br><br>TLDR; I make web, mobile and desktop apps. I
-            can speak C/C++, C#, Java, JavaScript and Python among others.<br><br><i>PS: I'm a Google fanboy and I idolise Elon Musk.</i></p>
+        <div class="content">
+            <p>Hey there! I am Mohammed Nafees, a Computer Science student at the University of Waterloo, Canada. This is my personal website where I will try to impress you by walking you through some of the things that I have worked on.<br><br>I'm an open-source enthusiast. I happen to be a former Google Code-in grand prize winner and an AngelHack Global HACKcelerator finalist.<br><br>TLDR; I make web, mobile and desktop apps. I can speak C/C++, C#, Java, JavaScript and Python among others.<br><br>Oh, and I absolutely adore kittens 🐱 and love KitKat 🍫!</p>
+            <div id="hacks">
+                <h2>Hacks</h2>
+                
+            </div>
+            <div class="social">
+                <h2>Social</h2>
+            </div>
+        </div>
     </div>
+    <div class="kittens" onclick="doMeow();">Meow!</div>
     <div class="unsplash-credits">
         Photo by Thug Thug on <a target="_blank" href="https://unsplash.com/photos/TReaXxzOszU">Unsplash</a>
         <hr>Copyright &copy; 2018 Mohammed Nafees
@@ -185,6 +198,10 @@
         console.log('/*************************************************************************/');
         console.log('/*         Hey there fellow hacker! What are you doing here?             */');
         console.log('/*************************************************************************/');
+
+        const doMeow = () => {
+            console.log("meow!");
+        };
     </script>
 </body>
 </html>
