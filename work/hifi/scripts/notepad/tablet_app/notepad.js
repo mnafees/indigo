@@ -14,10 +14,8 @@
 
 (function() {
   var APP_NAME = "NOTEPAD";
-  //var APP_URL = "https://mnafees.github.io/work/hifi/scripts/notepad/webpage/index.html";
-  //var APP_ICON = "https://mnafees.github.io/work/hifi/scripts/notepad/tablet_app/icon.svg";
-  var APP_URL = "file:///C:/Users/hello/Projects/mnafees.github.io/work/hifi/scripts/notepad/webpage/index.html";
-  var APP_ICON = "file:///C:/Users/hello/Projects/mnafees.github.io/work/hifi/scripts/notepad/tablet_app/icon.svg";
+  var APP_URL = "https://mnafees.github.io/work/hifi/scripts/notepad/webpage/index.html";
+  var APP_ICON = "https://mnafees.github.io/work/hifi/scripts/notepad/tablet_app/icon.svg";
 
   var tablet = Tablet.getTablet("com.highfidelity.interface.tablet.system");
 
