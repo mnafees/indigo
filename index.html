@@ -56,7 +56,7 @@
     <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web|Satisfy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web|Satisfy|Source+Code+Pro" rel="stylesheet">
     <style type="text/css">
         html, body {
             margin: 0;
@@ -235,6 +235,34 @@
             width: 50px;
             height: 50px;
         }
+        .hack {
+            border: 1px dotted #ddd;
+            margin-bottom: 10px;
+            padding-top: 2em;
+        }
+        .hack h3 {
+            padding: 0;
+            margin: 0;
+            font-size: 2em;
+            text-align: center;
+        }
+        .hack h4 {
+            margin: 0;
+            padding: 0;
+            color: #546E7A;
+            text-align: center;
+        }
+        .hack h2 {
+            padding: 20px;
+            font-size: 20px;
+            color: #263238;
+            margin: 0;
+            font-family: 'Source Code Pro', monospace;
+        }
+        .hack p {
+            padding-left: 2em;
+            padding-right: 2em;
+        }
     </style>
 </head>
 <body> 
@@ -245,7 +273,7 @@
         <div class="menu-container">
             <div class="row" data-href="#about">About</div>
             <div class="row" data-href="#hacks">Hacks</div>
-            <div class="row" data-href="#">Résumé</div>
+            <div class="row" data-href="https://drive.google.com/file/d/1gIb1zknrOFyrT_1kJ4ydS4ymbCrNCBdK/view?usp=sharing">Résumé</div>
             <div class="row" data-href="mailto:hello@mnafees.me">Email</div>
             <div class="row" data-href="#social">Social</div>
         </div>
@@ -254,24 +282,35 @@
             <p>Hey there! I am Mohammed Nafees, a Computer Science student at the University of Waterloo, Canada. This is my personal website where I will try to impress you by walking you through some of the things that I have worked on.<br><br>I'm an open-source enthusiast. I happen to be a former Google Code-in grand prize winner and an AngelHack Global HACKcelerator finalist.<br><br>TLDR; I make web, mobile and desktop apps. I can speak C/C++, C#, Java, JavaScript and Python among others.<br><br>Oh, and I absolutely adore kittens 🐱 and love KitKat 🍫!</p>
             <div id="hacks">
                 <h2>Hacks</h2>
-                
+                <div class="hack">
+                    <h3>Botty McBotFace</h3>
+                    <h4>Slack Bot built with NodeJS and C#</h4>
+                    <p>Botty McBotFace is a Slack Bot that I, along with 3 other people, wrote as part of McAfee's internal Geekapreneur hackathon while I was interning at McAfee. The Bot is meant to add security to a group's message threads. So, for instance, if there was a malicious file that was sent by an attacker, Botty will delete the message and notify the group admin as well as the attacker of the situation.</p>
+                    <h2>#nodejs #c-sharp #azure #security #slack-bot</h2>
+                </div>
+                <div class="hack">
+                    <h3>UhOh</h3>
+                    <h4>Proof of Concept to break WhatsApp's "Last Seen" privacy feature built with NodeJS</h4>
+                </div>
+                <h3>git-snap-commit</h3>
+                <h3>Study Spaces</h3>
             </div>
             <div class="social">
                 <h2>Social</h2>
                 <div class="social-ico-container">
-                    <div class="social-ico github-ico">
+                    <div class="social-ico github-ico" data-href="https://www.github.com/mnafees">
                         <img src="icons/social/github.svg">
                     </div>
-                    <div class="social-ico linkedin-ico">
+                    <div class="social-ico linkedin-ico" data-href="https://www.linkedin.com/in/mdnafees">
                         <img src="icons/social/linkedin.svg">
                     </div>
-                    <div class="social-ico medium-ico">
+                    <div class="social-ico medium-ico" data-href="https://www.medium.com/@mnafees.me">
                         <img src="icons/social/medium.svg">
                     </div>
-                    <div class="social-ico facebook-ico">
+                    <div class="social-ico facebook-ico" data-href="https://www.facebook.com/mnafees.me">
                         <img src="icons/social/facebook.svg">
                     </div>
-                    <div class="social-ico instagram-ico">
+                    <div class="social-ico instagram-ico" data-href="https://www.instagram.com/mnafees.me">
                         <img src="icons/social/instagram.svg">
                     </div>
                 </div>    
@@ -294,6 +333,20 @@
         console.log('/*************************************************************************/');
         console.log('/*         Hey there fellow hacker! What are you doing here?             */');
         console.log('/*************************************************************************/');
+
+        var links = document.querySelectorAll("div[data-href]");
+        for (var i = 0; i < links.length; ++i) {
+            const link = links[i].getAttribute("data-href");
+            if (link.charAt(0) === '#') {
+                links[i].onclick = function() {
+                    window.open(link);
+                };
+            } else {
+                links[i].onclick = function() {
+                    window.open(link, "_blank");
+                };
+            }
+        }
 
         const doMeow = () => {
             console.log("meow!");
